@@ -1,0 +1,16 @@
+<%- include('layout', { body: `
+<h2>Data Stok</h2>
+<table>
+<tr><th>Produk</th><th>Jumlah</th><th>Update</th></tr>
+${stock.map(s => `
+<tr>
+  <td>${s.nama}</td>
+  <td>
+    <form action="/stock/update/${s.id}" method="POST">
+      <input type="number" name="jumlah" value="${s.jumlah}" min="0">
+      <button type="submit">Simpan</button>
+    </form>
+  </td>
+</tr>`).join('')}
+</table>
+` }) %>

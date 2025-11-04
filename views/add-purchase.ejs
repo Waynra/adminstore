@@ -1,0 +1,12 @@
+<%- include('layout', { body: `
+<h2>Tambah Pembelian</h2>
+<form action="/pembelian/add" method="POST">
+  <label>Produk:</label>
+  <select name="produk_id">
+    ${produk.map(p => `<option value="${p.id}">${p.nama} - Rp ${p.harga}</option>`).join('')}
+  </select>
+  <label>Jumlah:</label>
+  <input type="number" name="jumlah" required>
+  <button type="submit">Simpan</button>
+</form>
+` }) %>

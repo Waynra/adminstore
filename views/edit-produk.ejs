@@ -1,0 +1,10 @@
+<%- include('layout', { body: `
+<h2>Edit Produk</h2>
+<form action="/produk/edit/${produk.id}" method="POST">
+  <label>Nama:</label>
+  <input name="nama" value="${produk.nama}" required>
+  <label>Harga:</label>
+  <input name="harga" type="number" value="${produk.harga}" required>
+  <button type="submit">Update</button>
+</form>
+` }) %>

@@ -1,0 +1,17 @@
+<%- include('layout', { body: `
+<h2>Data Produk</h2>
+<a href="/produk/add" class="btn">+ Tambah Produk</a>
+<table>
+<tr><th>ID</th><th>Nama</th><th>Harga</th><th>Aksi</th></tr>
+${produk.map(p => `
+<tr>
+  <td>${p.id}</td><td>${p.nama}</td><td>Rp ${p.harga}</td>
+  <td>
+    <a href="/produk/edit/${p.id}">Edit</a>
+    <form action="/produk/delete/${p.id}" method="POST" style="display:inline;">
+      <button type="submit" onclick="return confirm('Yakin hapus?')">Hapus</button>
+    </form>
+  </td>
+</tr>`).join('')}
+</table>
+` }) %>

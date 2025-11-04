@@ -1,0 +1,8 @@
+<%- include('layout', { body: `
+<h2>Tambah Produk</h2>
+<form action="/produk/add" method="POST">
+  <label>Nama:</label><input name="nama" required>
+  <label>Harga:</label><input name="harga" type="number" required>
+  <button type="submit">Simpan</button>
+</form>
+` }) %>

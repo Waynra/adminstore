@@ -1,0 +1,19 @@
+<%- include('layout', { body: `
+<h2>Data Pembelian</h2>
+<a href="/pembelian/add" class="btn">+ Tambah Pembelian</a>
+<table>
+<tr><th>ID</th><th>Produk</th><th>Jumlah</th><th>Total</th><th>Status</th><th>Tanggal</th><th>Aksi</th></tr>
+${pembelian.map(p => `
+<tr>
+  <td>${p.id}</td>
+  <td>${p.nama}</td>
+  <td>${p.jumlah}</td>
+  <td>Rp ${p.total}</td>
+  <td>${p.status}</td>
+  <td>${new Date(p.tanggal).toLocaleString()}</td>
+  <td>
+    ${p.status === 'aktif' ? `<form action="/pembelian/cancel/${p.id}" method="POST"><button>Cancel</button></form>` : ''}
+  </td>
+</tr>`).join('')}
+</table>
+` }) %>

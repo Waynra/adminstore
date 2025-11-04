@@ -1,0 +1,13 @@
+{
+  "name": "store-admin-crud",
+  "version": "1.0.0",
+  "description": "Admin toko sederhana dengan Node.js, Express, dan MySQL",
+  "main": "app.js",
+  "scripts": { "start": "node app.js" },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0"
+  }
+}
